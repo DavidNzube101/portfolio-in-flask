@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{ url_for('static', filename='media/Image Assets/download.png') }}">
+  	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<title>Full Portfolio List</title>
+</head>
+<body>
+	<section id="work" class="work">
+    	<h2>More Portfolio</h2>
+    	<div class="shelf">
+    		
+
+    		{% for Project_Title, Project_Details in Projects.items() %}
+
+    			<div class="work__grid">
+					<div class="work__card">
+						<img src="#" alt="Project 1 Thumbnail" class="work__card-image work__card-image-{{ Project_Title }}">
+						<h3>{{ Project_Title }}</h3>
+						<p>{{ Project_Details[1] }}</p>
+						<a href="{{ Project_Details[2] }}" class="work__card-link">GitHub →</a>
+					</div>
+    			</div>
+
+    			<script type="text/javascript">
+    				project_img__filename = "{{ Project_Details[0] }}"
+    				project_media__path = "{{ url_for('static', filename='media/Image Assets/Project Pics/BLAHH') }}"
+    				project_img__element = document.querySelector(".work__card-image-{{ Project_Title }}")
+
+    				project_img__element.src = project_media__path.replace('BLAHH', project_img__filename)
+
+    			</script>
+
+    		{% endfor %}
+
+    		
+    </section>
+</body>
+</html>

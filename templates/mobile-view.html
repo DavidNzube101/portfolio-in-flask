@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>David Nzube - Fullstack Web Developer</title>
+  	<link rel="icon" href="{{ url_for('static', filename='media/Image Assets/download.png') }}">
+
+  	<style type="text/css">
+  		@keyframes borderShiftAnim{
+  		  0%, 100%{
+		    border-radius: 40% 90% 35% 70% / 80% 12% 30% 34%;
+		  }
+		  20%{
+		    border-radius: 70% 50% 25% 10% / 20% 32% 90% 14%;
+		  }
+		  40%{
+		    border-radius: 80% 10% 45% 70% / 80% 12% 60% 94%;
+		  }
+		  55%{
+		    border-radius: 10% 90% 35% 65% / 90% 32% 20% 74%;
+		  }
+		  70%{
+		    border-radius: 30% 40% 35% 70% / 76% 12% 93% 34%;
+		  }
+		  90%{
+		    border-radius: 10% 50% 35% 70% / 20% 12% 10% 34%;
+		  }
+  		}
+  		body{
+  			background: url({{url_for("static", filename="media/Image Assets/Screenshot12.png")}});
+  			background-size: cover;
+  			background-repeat: no-repeat;
+  			font-family: monospace;
+  		}
+  		div{
+  			height: 100vh;
+  			display: flex;
+  			align-items: center;
+  			justify-content: center;
+  			backdrop-filter: blur(0.9rem);
+  		}
+  		div article{
+  			color: black;
+  			background: #ffffff8c;
+  			aspect-ratio: 1/1;
+  			display: grid;
+  			place-items: center;
+  			height: 200px;
+  			padding: 10px;
+  			animation: borderShiftAnim 10s infinite;
+  			border-radius: 20px;
+  		}
+  		div article img{
+  			aspect-ratio: 1/1;
+  			width: 70px;
+  			border-radius: 10pc;
+  		}
+  		div article p{
+  			font-size: 23px;
+  		}
+  		div article button{
+  			background: #1d78c1;
+  			padding: 10px;
+  			font-size: 19px;
+  			color: white;
+  			outline: none;
+  			cursor: pointer;
+  			border: 0;
+  			border-radius: 10px;
+  		}
+  	</style>
+</head>
+<body>
+
+	<div>
+		<article>
+			<img src=" {{ url_for('static', filename='media/Image Assets/download.png') }} " align="center">
+			<p align="center">Can't View This?</p>
+			<a href="/i"><button>Desktop Mode →</button></a>
+		</article>
+	</div>
+
+</body>
+</html>

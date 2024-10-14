@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Nzube | FullStack Web Developer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='media/Image Assets/download.png') }}">
+
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">David.</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button">Get in Touch</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <h1>David Nzube</h1>
+                <p>FullStack Web Developer</p>
+                <p>I can deliver results that exceed your expectations.</p>
+                <button class="cta-button">Hire Me Now</button>
+            </div>
+            <div class="hero-image">
+                <!-- Add your image here -->
+                <img src="{{ url_for('static', filename='media/Image Assets/034A2C65-06B8-42E2-8F22-35258C096A4A-removebg.png') }}">
+            </div>
+        </section>
+
+        <section class="stats container">
+            <div class="stat-item">
+                <div class="stat-number">51+</div>
+                <div>Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">14+</div>
+                <div>Satisfied Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4+</div>
+                <div>Years of Experience</div>
+            </div>
+        </section>
+
+        <section id="services" class="services container">
+            <h2>Available services that I can work on</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>HTML</h3>
+                    <p>Frontend Development</p>
+                </div>
+                <div class="service-item">
+                    <h3>CSS</h3>
+                    <p>Styling and Layout</p>
+                </div>
+                <div class="service-item">
+                    <h3>PHP</h3>
+                    <p>Backend Development</p>
+                </div>
+                <div class="service-item">
+                    <h3>Python</h3>
+                    <p>Web Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>Flask</h3>
+                    <p>Web Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>NodeJS</h3>
+                    <p>Web Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>NextJS</h3>
+                    <p>Web Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>Laravel</h3>
+                    <p>Web Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>Django</h3>
+                    <p>Web Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>JavaScript</h3>
+                    <p>Interactive Websites</p>
+                </div>
+                <div class="service-item">
+                    <h3>TypeScript</h3>
+                    <p>JavaScript Superset</p>
+                </div>
+                <div class="service-item">
+                    <h3>Kivy</h3>
+                    <p>Mobile Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>React Native</h3>
+                    <p>Mobile Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>Ruby</h3>
+                    <p>Web Development</p>
+                </div>
+                <div class="service-item">
+                    <h3>Ruby on rails</h3>
+                    <p>Web Applications</p>
+                </div>
+                <div class="service-item">
+                    <h3>Rust</h3>
+                    <p>Embedded Systems</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects container">
+            <h2>Selected works 2020-Present</h2>
+            <div class="project-grid">
+            		{% for ProjectTitle, ProjectContent in Projects.items() %}
+            			<div class="project-item">
+            			    <div class="project-image">
+            			        <img src="{{ url_for('static', filename='media/Image Assets/Project Pics/' + ProjectContent[0]) }}">
+            			    </div>
+            			    <div class="project-info">
+            			        <h3>{{ ProjectTitle }}</h3>
+            			        <p>{{ ProjectContent[1] }}</p>
+            			        <a href="{{ ProjectContent[2] }}" target="_blank">View Project</a>
+            			    </div>
+            			</div>
+            		{% endfor %}
+                
+            </div>
+        </section>
+
+        <section id="contact" class="contact container">
+            <h2>Let's talk to Collaboration</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2024 David Nzube. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
